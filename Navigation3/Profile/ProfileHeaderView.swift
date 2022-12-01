@@ -22,7 +22,7 @@ class ProfileHeaderView: UIView {
          }
 
     lazy var profileAvatarImage: UIImageView = {
-                 let tempImage = UIImage(named: "img")
+                 let tempImage = UIImage(named: "Photo1")
                  let profileAvatarImage = UIImageView()
                  profileAvatarImage.translatesAutoresizingMaskIntoConstraints = false
                  profileAvatarImage.clipsToBounds = true

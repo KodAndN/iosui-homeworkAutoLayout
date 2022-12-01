@@ -8,48 +8,71 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-    
-    var profileHeaderView = ProfileHeaderView()
+
+     private let postVk: [PostVK] = PostVK.makePost()
+
+     private lazy var tableView: UITableView = {
+         let tableView = UITableView(frame: .zero, style: .grouped)
+         tableView.translatesAutoresizingMaskIntoConstraints = false
+         tableView.dataSource = self
+         tableView.delegate = self
+         tableView.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
+         return tableView
+     }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemGray6
+        setupLayout()
+    }
+    
+    private let profileHeaderView: ProfileHeaderView = {
+        let profileHeaderView = ProfileHeaderView()
+        profileHeaderView.backgroundColor = .systemGray6
         profileHeaderView.translatesAutoresizingMaskIntoConstraints = false
-        profileHeaderView.backgroundColor = .lightGray
-
-        viewConstraints()
-    }
+        return profileHeaderView
+        }()
     
-    private lazy var newButton: UIButton = {
-        let newButton = UIButton()
-        newButton.translatesAutoresizingMaskIntoConstraints = false
-        newButton.backgroundColor = .systemRed
-        newButton.setTitle("кнопка", for: .normal)
-        newButton.setTitleColor(UIColor.white, for: .normal)
-        newButton.addTarget(self, action: #selector(tapAction), for: .touchUpInside)
-        return newButton
-    }()
-    
-    @objc private func tapAction() {
-        print("кнопка")
-    }
-    
-    private func viewConstraints() {
-        view.addSubview(profileHeaderView)
-        view.addSubview(newButton)
+    private func setupLayout() {
+        view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
-            
-            profileHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            profileHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            profileHeaderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            profileHeaderView.heightAnchor.constraint(equalToConstant: 220),
-            
-            newButton.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            newButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            newButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        ])
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+                 ])
+             }
+         }
+
+extension ProfileViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { UITableView.automaticDimension
+              }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let profileHeader = ProfileHeaderView()
+        return profileHeader
+              }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat { return 220
+              }
+          }
+
+extension ProfileViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return postVk.count
     }
     
-
-   
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier, for: indexPath) as! PostTableViewCell
+        cell.setupCell(postVk[indexPath.row])
+        return cell
+    }
+}
+extension UIView {
+    static var identifier: String {
+        return String(describing: self)
+        
+    }
+    
 }

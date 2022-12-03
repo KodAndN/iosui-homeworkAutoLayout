@@ -20,6 +20,9 @@
 		72160B212934BF81007CD03C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72160B202934BF81007CD03C /* Post.swift */; };
 		72160B2329361BEE007CD03C /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72160B2229361BEE007CD03C /* TextField.swift */; };
 		72160B2529361D22007CD03C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72160B2429361D22007CD03C /* MainTabBarController.swift */; };
+		72803CA729386D310033400D /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72803CA629386D310033400D /* LogInViewController.swift */; };
+		72803CA92938A8A20033400D /* PostVK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72803CA82938A8A20033400D /* PostVK.swift */; };
+		72803CAB2938AC3B0033400D /* PostTableViewCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72803CAA2938AC3B0033400D /* PostTableViewCall.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		72160B202934BF81007CD03C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		72160B2229361BEE007CD03C /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		72160B2429361D22007CD03C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		72803CA629386D310033400D /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		72803CA82938A8A20033400D /* PostVK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVK.swift; sourceTree = "<group>"; };
+		72803CAA2938AC3B0033400D /* PostTableViewCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCall.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,9 @@
 			children = (
 				72160B2229361BEE007CD03C /* TextField.swift */,
 				72160B162934BEFB007CD03C /* ProfileHeaderView.swift */,
+				72803CAA2938AC3B0033400D /* PostTableViewCall.swift */,
+				72803CA82938A8A20033400D /* PostVK.swift */,
+				72803CA629386D310033400D /* LogInViewController.swift */,
 				72160B182934BF21007CD03C /* ProfileViewController.swift */,
 			);
 			path = Profile;
@@ -166,11 +175,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72803CA729386D310033400D /* LogInViewController.swift in Sources */,
 				72160B062934BEB2007CD03C /* ViewController.swift in Sources */,
+				72803CA92938A8A20033400D /* PostVK.swift in Sources */,
 				72160B022934BEB2007CD03C /* AppDelegate.swift in Sources */,
 				72160B2529361D22007CD03C /* MainTabBarController.swift in Sources */,
 				72160B1D2934BF48007CD03C /* PostViewController.swift in Sources */,
 				72160B2329361BEE007CD03C /* TextField.swift in Sources */,
+				72803CAB2938AC3B0033400D /* PostTableViewCall.swift in Sources */,
 				72160B192934BF21007CD03C /* ProfileViewController.swift in Sources */,
 				72160B042934BEB2007CD03C /* SceneDelegate.swift in Sources */,
 				72160B1B2934BF33007CD03C /* FeedViewController.swift in Sources */,

@@ -11,9 +11,6 @@ class MainTabBarController: UITabBarController {
     
     let colorSet = UIColor(hex:0x4885CC)
     let feedVC = FeedViewController()
-    //let profileVC = ProfileViewController()
-    //let postVC = PostViewController()
-    //var post = Post(title: "Post")
     let logIn = LogInViewController()
     
     override func viewDidLoad() {

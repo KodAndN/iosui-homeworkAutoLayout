@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		720144B9293D2544005857BB /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720144B8293D2544005857BB /* PhotosTableViewCell.swift */; };
+		720144BB293D259C005857BB /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720144BA293D259C005857BB /* PhotosViewController.swift */; };
+		720144BD293D25D2005857BB /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720144BC293D25D2005857BB /* PhotosCollectionViewCell.swift */; };
+		720144BF293D25FF005857BB /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720144BE293D25FF005857BB /* Photo.swift */; };
 		72160B022934BEB2007CD03C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72160B012934BEB2007CD03C /* AppDelegate.swift */; };
 		72160B042934BEB2007CD03C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72160B032934BEB2007CD03C /* SceneDelegate.swift */; };
 		72160B062934BEB2007CD03C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72160B052934BEB2007CD03C /* ViewController.swift */; };
@@ -26,6 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		720144B8293D2544005857BB /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
+		720144BA293D259C005857BB /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		720144BC293D25D2005857BB /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		720144BE293D25FF005857BB /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		72160AFE2934BEB2007CD03C /* Navigation3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72160B012934BEB2007CD03C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72160B032934BEB2007CD03C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +103,10 @@
 		72160B152934BECE007CD03C /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				720144BA293D259C005857BB /* PhotosViewController.swift */,
+				720144B8293D2544005857BB /* PhotosTableViewCell.swift */,
+				720144BC293D25D2005857BB /* PhotosCollectionViewCell.swift */,
+				720144BE293D25FF005857BB /* Photo.swift */,
 				72160B2229361BEE007CD03C /* TextField.swift */,
 				72160B162934BEFB007CD03C /* ProfileHeaderView.swift */,
 				72803CAA2938AC3B0033400D /* PostTableViewCall.swift */,
@@ -175,6 +187,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				720144B9293D2544005857BB /* PhotosTableViewCell.swift in Sources */,
+				720144BB293D259C005857BB /* PhotosViewController.swift in Sources */,
 				72803CA729386D310033400D /* LogInViewController.swift in Sources */,
 				72160B062934BEB2007CD03C /* ViewController.swift in Sources */,
 				72803CA92938A8A20033400D /* PostVK.swift in Sources */,
@@ -185,8 +199,10 @@
 				72803CAB2938AC3B0033400D /* PostTableViewCall.swift in Sources */,
 				72160B192934BF21007CD03C /* ProfileViewController.swift in Sources */,
 				72160B042934BEB2007CD03C /* SceneDelegate.swift in Sources */,
+				720144BF293D25FF005857BB /* Photo.swift in Sources */,
 				72160B1B2934BF33007CD03C /* FeedViewController.swift in Sources */,
 				72160B212934BF81007CD03C /* Post.swift in Sources */,
+				720144BD293D25D2005857BB /* PhotosCollectionViewCell.swift in Sources */,
 				72160B1F2934BF71007CD03C /* InfoViewController.swift in Sources */,
 				72160B172934BEFB007CD03C /* ProfileHeaderView.swift in Sources */,
 			);

@@ -8,7 +8,7 @@
 import UIKit
 
 class PostViewController: UIViewController {
-    var post = Post(title: "Post")
+    var postTitle: String = "Post"
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
@@ -21,7 +21,6 @@ class PostViewController: UIViewController {
     }
     @objc private func tapAction() {
         let infoVC = InfoViewController()
-        //infoVC.title = "New"
         navigationController?.pushViewController(infoVC, animated: true)
     }
 }

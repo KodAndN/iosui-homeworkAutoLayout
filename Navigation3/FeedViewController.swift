@@ -11,20 +11,53 @@ class FeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemIndigo
-        makeButton()
+        view.backgroundColor = .systemBackground
+        setupLayout()
     }
-    private func makeButton() {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
-        button.center = view.center
-        button.setTitle("Post", for: .normal)
-        button.backgroundColor = .black
-        button.addTarget(self, action: #selector(tapAction), for: .touchDown)
-        view.addSubview(button)
+    
+    private let stackView: UIStackView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.axis = .vertical
+        $0.spacing = 10
+        return $0
+    }(UIStackView())
+    
+    private lazy var firstButton: UIButton = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.setTitle("First button", for: .normal)
+        $0.backgroundColor = UIColor(hex: 0x4885CC)
+        $0.layer.cornerRadius = 10
+        $0.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        return $0
+    }(UIButton())
+    
+    @objc func buttonAction(sender: UIButton!) {
+        self.navigationController?.pushViewController(PostViewController(), animated: true)
     }
-    @objc private func tapAction() {
-        let postVC = PostViewController()
-        postVC.navigationItem.title = postVC.post.title
-        navigationController?.pushViewController(postVC, animated: true)
+    
+    private lazy var secondButton: UIButton = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.setTitle("Second button", for: .normal)
+        $0.backgroundColor = UIColor(hex: 0x4885CC)
+        $0.layer.cornerRadius = 10
+        $0.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        return $0
+    }(UIButton())
+    
+    private func setupLayout() {
+        view.addSubview(stackView)
+        [firstButton, secondButton].forEach { stackView.addArrangedSubview($0) }
+        
+        NSLayoutConstraint.activate([
+            // stackView
+            stackView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            stackView.heightAnchor.constraint(equalToConstant: 110),
+            // firstButton
+            firstButton.heightAnchor.constraint(equalToConstant: 50),
+            // secondButton
+            secondButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
 }
